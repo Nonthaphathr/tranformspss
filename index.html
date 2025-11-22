@@ -101,11 +101,11 @@
             left: 10px;
         }
 
-        /* Slideshow */
+        /* Slideshow - ปรับขนาดให้เล็กลง */
         .slideshow-container {
             position: relative;
-            max-width: 100%;
-            margin: 0 auto 30px;
+            max-width: 650px; /* ปรับขนาดลงจากเดิม (100%) ให้พอดีสายตา */
+            margin: 0 auto 30px; /* จัดกึ่งกลาง */
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(236, 72, 153, 0.2);
@@ -225,6 +225,7 @@
             .instructions { padding: 20px; }
             .instructions h2 { font-size: 20px; }
             .download-button { font-size: 16px; padding: 14px 24px; }
+            .slideshow-container { max-width: 100%; } /* มือถือให้เต็มจอเหมือนเดิม */
         }
     </style>
 </head>
@@ -253,16 +254,16 @@
 
         <div class="slideshow-container">
             <div class="slide active">
-                <img src="https://nonthaphathr.github.io/uploadimg/2.png" alt="ตัวอย่างการใช้งาน 1" onerror="this.style.display='none'">
+                <img src="https://nonthaphathr.github.io/uploadimg/opal1.jpg" alt="ตัวอย่างการใช้งาน 1" onerror="this.style.display='none'">
             </div>
             <div class="slide">
-                <img src="https://nonthaphathr.github.io/uploadimg/3.png" alt="ตัวอย่างการใช้งาน 2" onerror="this.style.display='none'">
+                <img src="https://nonthaphathr.github.io/uploadimg/opal2.jpg" alt="ตัวอย่างการใช้งาน 2" onerror="this.style.display='none'">
             </div>
             <div class="slide">
-                <img src="https://nonthaphathr.github.io/uploadimg/4.png" alt="ตัวอย่างการใช้งาน 3" onerror="this.style.display='none'">
+                <img src="https://nonthaphathr.github.io/uploadimg/opal2-1.jpg" alt="ตัวอย่างการใช้งาน 3" onerror="this.style.display='none'">
             </div>
             <div class="slide">
-                <img src="https://nonthaphathr.github.io/uploadimg/5.png" alt="ตัวอย่างการใช้งาน 4" onerror="this.style.display='none'">
+                <img src="https://nonthaphathr.github.io/uploadimg/opal3.jpg" alt="ตัวอย่างการใช้งาน 4" onerror="this.style.display='none'">
             </div>
         </div>
         <div class="dots-container">
@@ -291,7 +292,6 @@
     </div>
 
     <script>
-        /* Config Script */
         const defaultConfig = {
             system_title: "ระบบ Mini App แปลผล Output จาก SPSS",
             instruction_title: "โปรดอ่าน",
@@ -344,7 +344,6 @@
             slideInterval = setInterval(showSlides, 3000);
         }
 
-        // SDK Integration Logic
         async function onConfigChange(newConfig) {
             config = { ...config, ...newConfig };
             
